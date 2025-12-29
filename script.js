@@ -1,11 +1,27 @@
+cat > script.js << 'EOF'
 let score = 0;
 
 function createHeart() {
   const heart = document.createElement("div");
-  heart.className = "heart";
   heart.textContent = "❤️";
-
+  heart.style.position = "absolute";
+  heart.style.fontSize = "30px";
   heart.style.left = Math.random() * 90 + "vw";
+  heart.style.bottom = "-40px";
+  heart.style.cursor = "pointer";
+
+  document.body.appendChild(heart);
+
+  let position = -40;
+  const floatInterval = setInterval(() => {
+    position += 2;
+    heart.style.bottom = position + "px";
+
+    if (position > window.innerHeight) {
+      clearInterval(floatInterval);
+      heart.remove();
+    }
+  }, 20);
 
   heart.onclick = () => {
     score++;
@@ -13,13 +29,11 @@ function createHeart() {
     heart.remove();
 
     if (score === 5) {
-      alert("Happy 18th ❤️ You mean everything to me!");
+      alert("Happy 18th ❤️ You mean the world to me!");
     }
   };
-
-  document.body.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 5000);
 }
 
 setInterval(createHeart, 800);
+EOF
+
