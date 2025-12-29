@@ -15,12 +15,12 @@ function createHeart() {
   document.body.appendChild(heart);
 
   let position = -40;
-  const float = setInterval(() => {
+  const floatInterval = setInterval(() => {
     position += 2;
     heart.style.bottom = position + "px";
 
     if (position > window.innerHeight) {
-      clearInterval(float);
+      clearInterval(floatInterval);
       heart.remove();
     }
   }, 20);
@@ -36,4 +36,4 @@ function createHeart() {
   };
 }
 
-setInterval(createHeart, 800);
+setInterval(createHeart, 8
