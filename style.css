@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Entry page */
+.entry-body {
+  background: #ffe6f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cat-popup {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.cat {
+  font-size: 80px;
+}
+
+.enter-btn {
+  margin-top: 20px;
+  padding: 15px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 15px;
+  background: #ff85b3;
+  color: white;
+  cursor: pointer;
+}
+
+/* Game page */
+.game-body {
+  background: #fff0f5;
+  text-align: center;
+  height: 100vh;
+}
+
+.heart {
+  position: absolute;
+  font-size: 30px;
+  cursor: pointer;
+  animation: floatUp 5s linear;
+}
+
+@keyframes floatUp {
+  from { bottom: -50px; }
+  to { bottom: 110%; }
+}
