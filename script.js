@@ -1,9 +1,11 @@
-cat > script.js << 'EOF'
+console.log("script.js loaded");
+
 let score = 0;
 
 function createHeart() {
   const heart = document.createElement("div");
   heart.textContent = "❤️";
+
   heart.style.position = "absolute";
   heart.style.fontSize = "30px";
   heart.style.left = Math.random() * 90 + "vw";
@@ -13,12 +15,12 @@ function createHeart() {
   document.body.appendChild(heart);
 
   let position = -40;
-  const floatInterval = setInterval(() => {
+  const float = setInterval(() => {
     position += 2;
     heart.style.bottom = position + "px";
 
     if (position > window.innerHeight) {
-      clearInterval(floatInterval);
+      clearInterval(float);
       heart.remove();
     }
   }, 20);
@@ -35,5 +37,3 @@ function createHeart() {
 }
 
 setInterval(createHeart, 800);
-EOF
-
